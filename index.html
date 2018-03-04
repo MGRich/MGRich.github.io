@@ -3,6 +3,7 @@
   <div class="nam center">MGRich</div>
   <div class="btns">
     <a class="waves-effect waves-light btn-flat" id="bp2t">ptr2tools</a>
+    <a class="waves-effect waves-light btn-flat" id="bbd">BetterDiscord</a>
   </div>
 </div>
 <div class="textholder">
@@ -136,7 +137,6 @@ html {
 .banner .logo {
   height: 80px;
   width: 80px;
-  top:-50px;
   position: relative;
   top:-10px;
   left:0;
@@ -199,13 +199,14 @@ h3 {
   display:block;
 }
 body {
-  overflow:visible!important;
+  overflow:hidden!important;
 }
 .textholder {
  width:90%;
  left:0;
  margin:auto;
  margin-top: 30px;
+ overflow-y: visible;
 }
 .btns {
   display:flex;
@@ -225,6 +226,36 @@ body {
   font-weight: bold;
   font-size:24px;
 }
+@media screen and (max-width: 600px) {
+  .banner {
+    flex-direction: row;
+    height:100px;
+  }
+  .banner .logo {
+    top:0;
+    left:calc(50% - 20px);
+  }
+  .nam {
+    visibility: hidden;
+  }
+  .btns {
+    width:calc(100% - 115px);
+    left:0;
+    top:5px;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+  }
+  .btns .btn-flat {
+    font-size:.9em;
+  }
+}
+@media screen and (min-width: 1440px) {
+  * {
+    font-size:1.1em !important;
+  }
+
+}
 </style>
     </head>
     <body>
@@ -238,7 +269,7 @@ $( ".header" ).next().css( "margin-top", "6px" );
 $( ".subheader" ).next().css( "margin-top", "6px" );
 $(".button-collapse").sideNav();  
 $("#bp2t").click(function(){
-  $('body:not(:animated)').animate({scrollTop: $("#p2t").offset().top - 200}, 1300, 'easeInOutQuad' );}
+  $('.textholder:not(:animated)').animate({scrollTop: $("#p2t").offset().top - 200}, 1300, 'easeInOutQuad' );}
 );
 </script>
     </body>
