@@ -1,6 +1,6 @@
 <div class="banner mg-bgcolor">
-  <img class="logo vert-center image" src="https://lh3.googleusercontent.com/-RcMpwuGpMY4/Wn0WVhDsPPI/AAAAAAAABGU/AjYxYjOe5UMu0pc7F9MYqsBqPGfbWbLlgCEwYBhgL/w140-h139-p/Untitled.png">
-  </img>
+  <img class="logo vert-center image" src="https://lh3.googleusercontent.com/-RcMpwuGpMY4/Wn0WVhDsPPI/AAAAAAAABGU/AjYxYjOe5UMu0pc7F9MYqsBqPGfbWbLlgCEwYBhgL/w140-h139-p/Untitled.png"></img>
+  <div class="nam center">MGRich</div>
   <div class="btns">
     <a class="waves-effect waves-light btn-flat" id="bp2t">ptr2tools</a>
   </div>
@@ -134,12 +134,12 @@ html {
   transition:background .2s ease; 
 }
 .banner .logo {
-  position:absolute;
-  height: 110px;
-  top: 5% !important;
-  width: 110px;
+  height: 80px;
+  width: 80px;
+  top:-50px;
+  position: relative;
+  top:-10px;
   left:0;
-  right:0;
 }
 .banner .btn-floating {
   position: absolute;
@@ -181,6 +181,10 @@ h3 {
   top:0!important;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   z-index:3;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content:space-around;
 }
 .page {
   position:absolute;
@@ -208,10 +212,18 @@ body {
   width:100%;
   justify-content: center;
   position:absolute;
-  bottom:10px;
+  bottom:5px;
+  order:2;
 }
 .text > code {
   background:rgba(0,0,0,0.16)
+}
+.nam {
+  order:1;
+  position: relative;
+  bottom:40px;
+  font-weight: bold;
+  font-size:24px;
 }
 </style>
     </head>
