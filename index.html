@@ -4,7 +4,7 @@
   <div class="nam center">MGRich</div>
   <div class="btns">
     <a class="waves-effect waves-light btn-flat" id="bp2t">ptr2tools</a>
-    <a class="waves-effect waves-light btn-flat" id="bbd">BetterDiscord (WIP)</a>
+    <a class="waves-effect waves-light btn-flat" id="bbd">BetterDiscord</a>
   </div>
 </div>
 <div class="sidel"></div>
@@ -13,6 +13,13 @@
 <div class="header text subc">Welcome to my website!</div>
 <div class="text subc">
   It's a bit bland right now, as I don't have anything, but this will grow as I do more projects. For now, this is a place mostly for PTR2Tools.
+</div>
+<div class="header text subc" id="bd">BetterDiscord</div>
+<div class="text subc">
+  <p>All I really do are some mini-themes, so here are the list of all of them.(Some may be outdated due to me not doing them anymore.)</p>
+  <p><a href="https://github.com/MGRich/BetterPictureInPicture">BetterPictureInPicture</a> - Makes the picture in picture in discord be more customizable and cleaner. Part of the "Better" series.</p>
+  <p><a href="https://github.com/MGRich/BetterTitleBar">BetterTitleBar</a> - Makes the new titlebar much cleaner and customizable. Part of the "Better" series.</p>
+  <p><a href="https://github.com/MGRich/DockedSettings">DockedSettings</a> - The most up to date. Hides the settings for easy multitasking. </p>
 </div>
 <div class="header text subc" id="p2t"><a href="https://github.com/MGRich/ptr2tools/">PTR2Tools</a></div>
 <div class="text subc">
@@ -99,6 +106,7 @@
     inject [tm0-folder] [tex0] [input-filename]
     extract-list [tm0-folder] [list-filename] png-folder
     inject-list [tm0-folder] [list-filename] png-folder</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -312,6 +320,9 @@ $( ".subheader" ).next().css( "margin-top", "6px" );
 $(".button-collapse").sideNav();  
 $("#bp2t").click(function(){
   $('body:not(:animated)').animate({scrollTop: $("#p2t").offset().top - 200}, 1300, 'easeInOutQuad' );}
+);
+$("#bbd").click(function(){
+  $('body:not(:animated)').animate({scrollTop: $("#bd").offset().top - 200}, 1300, 'easeInOutQuad' );}
 );
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   document.getElementsByClassName("sider").style.visibility = "visible";
