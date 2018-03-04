@@ -1,18 +1,105 @@
-<ul id="slide-out" class="side-nav subbg">
-  <li><a class="subheader">Pages</a></li>
-  <li><a class="waves-effect subc" id="c1b" href="#!"></a>h</li>
-</ul>
 <div class="banner mg-bgcolor">
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons sidebar-open">menu</i></a>
   <img class="logo vert-center image" src="https://lh3.googleusercontent.com/-RcMpwuGpMY4/Wn0WVhDsPPI/AAAAAAAABGU/AjYxYjOe5UMu0pc7F9MYqsBqPGfbWbLlgCEwYBhgL/w140-h139-p/Untitled.png">
-    <div>MGRich</div>
   </img>
+  <div class="btns">
+    <a class="waves-effect waves-light btn-flat" id="bp2t">ptr2tools</a>
+  </div>
 </div>
-<div class="wrapper subbg" id="wp1">
-  <div class="header text subc"> &nbsp;&nbsp;WIP</div>
-  <div class="text subc">its wip deal with</div>
+<div class="textholder">
+<div class="header text subc">Welcome to my website!</div>
+<div class="text subc">
+  It's a bit bland right now, as I don't have anything, but this will grow as I do more projects. For now, this is a place mostly for PTR2Tools.
 </div>
-<html>
+<div class="header text subc" id="p2t">PTR2Tools</div>
+<div class="text subc">
+    <p>NOTE: This is a different version of PTR2Tools which fixes a whole lot of things.
+    The old version by posesix is unusable.
+    Old README at the bottom.</p>
+    <h1 id="tutorialanddocumentation">Tutorial and Documentation</h1>
+    <h2 id="information">Information</h2>
+    <p>Today (2/25/18) is the day where I have fixed PTR2Tools. (Took me about 2 whole months)
+    Disregard he other tutorial I made before this one, it is very outdated and will provide false information.
+    This tutorial will just be an edited version of the tutorial that I had make before, although it is a bit more complex.
+    It will also update every now and then, due to me making changes.</p>
+    <h1 id="compilingandsetup">Compiling and setup</h1>
+    <p>TO FREE MINGW:</p>
+    <ol>
+    <li>Run "cd /".</li>
+    <li>From here you can CD to the C (or any) drive by doing "cd c"</li>
+    <li>You have to do this every time you start up MINGW.</li>
+    <li><a href="https://msys2.org">Install MSYS2</a> and open the MINGW (this tutorial uses 64) console.</li>
+    <li>Using the "TO FREE MINGW" above, direct to the directory where you want it.</li>
+    <li>Using normal file explorer now, download the <code>make.sh</code> located at the releases and place it into that directory.</li>
+    </ol>
+    <p>3b. If you put in the file while the directory was open, do <code>cd .</code>.</p>
+    <ol>
+    <li>Run it using <code>sh make.sh</code>.</li>
+    <li>Say yes to everything, and once its finally done you should have ability to use PTR2tools (and ISOMod).</li>
+    </ol>
+    <p>5b. <strong>The make acts as an updater. Run it periodically to get the latest updates. Anything other than PTR2Tools will be deleted if it is placed in that folder.</strong></p>
+    <p><strong>You must continue to use MINGW. The commands must be stored there. If they are not, they have the very possibility to break.</strong></p>
+    <h2 id="ptr2int">PTR2INT</h2>
+    <h3 id="commands">Commands</h3>
+    <h3 id="listintfile">list [intfile]</h3>    
+    <p>Print list of contents of an INT file.
+       <strong>ALIASES: l, ls</strong></p>
+    <h3 id="extractintfilefolder">extract [intfile] [folder]</h3>
+    <p>Extract contents of an INT file to a folder.
+       <strong>ALIASES: e, ex, x</strong></p>
+    <h3 id="createintfilefolder">create [intfile] [folder]</h3>
+    <p>Create an INT file using the contents of a folder.
+       <strong>ALIASES: c, i, make, pack</strong></p>
+    <h3 id="optimizefolderoutneworderfile">optimize [folder] [out-neworderfile]</h3>
+    <p><strong>I do not recommend using this.</strong></p>
+    <p>Attempts to optimize the _order.txt file of a folder to achieve lzss compression.
+       <strong>ALIAS: optimise</strong></p>
+    <h3 id="commandarguments">Command arguments:</h3>
+    <p>intfile: The INT file. It's best to have this in your cd directory.</p>
+    <p>folder: The folder the INT contents will be placed in.</p>
+    <p>folder (optimize): The folder of which an _order.txt is located.</p>
+    <p>out-neworderfile: The new order file to be made.</p>
+    <p>Example: ptr2int e TITLE.INT title</p>
+    <h2 id="ptr2spm">PTR2SPM</h2>
+    <h3 id="commands-1">Commands</h3>
+    <h3 id="gtex0spmfileoutfile">gtex0 [spmfile] [outfile]</h3>
+    <p>Extracts tex0 from an SPM model.</p>
+    <h3 id="commandarguments-1">Command arguments:</h3>
+    <p>spmfile: The spm file.</p>
+    <p>outfile: The output file in .txt.</p>
+    <p>Example: ptr2spm gtex0 ant_ant.spm meme.txt</p>
+    <h2 id="ptr2tex">PTR2TEX</h2>
+    <h3 id="commands-2">Commands</h3>
+    <h3 id="extracttm0folderinlistfilepngfolder">extract [tm0-folder] [in-listfile] <png-folder></h3>
+    <p>Batch extract textures from tm0-folder using listfile and output as RGBA PNG.
+         If png-folder is not specified, the current directory is used for output.
+       <strong>ALIASES: e, x, get, g</strong></p>
+    <h3 id="injecttm0folderinlistfilepngfolder">inject [tm0-folder] [in-listfile] <png-folder></h3>
+    <p>Batch inject textures into tm0-folder using listfile with 32-bit RGBA PNGs.
+         If png-folder is not specified, the current directory is used as input.
+       <strong>ALIASES: i, put, p</strong></p>
+    <h3 id="commandsdefined">Commands defined:</h3>
+    <p>extract: Extracts a list of TM0 textures.</p>
+    <p>inject: Puts in a list of TM0 textures.</p>
+    <h3 id="commandarguments-2">Command arguments:</h3>
+    <p>tm0-folder: The folder that all the TM0s are in. It is named "TEXTURES" when the INT is extracted.</p>
+    <p>in-listfile: The .txt file with the tex0 IDs. See PTR2SPM: outfile.</p>
+    <p>png-folder: The folder with the PNGs to be injected in.</p>
+    <p>Example: ptr2tex extract TEXTURES meme.txt maymay</p>
+    <h2 id="oldptr2texptr2tex2">OLD PTR2TEX (PTR2TEX2)</h2>
+    <h2 id="information-1">Information</h2>
+    <p>This was included in here just in case the common "Segmentation fault" error appeared with the fixed PTR2Tex.</p>
+    <p>If you know which tex0 give that error, you can use the <code>extract</code> and <code>inject</code> command separately.</p>
+    <p>Here it is defined by PTR2Tools.</p>
+    <pre><code>---Commands---
+    extract [tm0-folder] [tex0] [output-filename]
+    inject [tm0-folder] [tex0] [input-filename]
+    extract-list [tm0-folder] [list-filename] &lt;png-folder&gt;
+    inject-list [tm0-folder] [list-filename] &lt;png-folder&gt;
+    </code></pre>
+</div>
+</div>
+</div>
+<html>  
     <head>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -76,13 +163,16 @@ html {
 .image {
   background: transparent;
 }
-.header, .subheader {
+.header, .subheader, h1, h2,h3 {
   font-weight:bold;
-  font-size:20px!important;
+  font-size: 30px!important;
   border-bottom:2px solid var(--mg-bg);
 }
-.subheader {
-  font-size:17px!important
+.subheader, h2 {
+  font-size:24px!important
+}
+h3 {
+  font-size:20px!important;
 }
 .banner {
   position: sticky;
@@ -99,15 +189,6 @@ html {
   top:130px!important;
   padding-top:10px;
 }
-.wrapper {
-  width:70%;
-  height:auto!important;
-  min-height:250px;
-  margin:auto;
-  padding:5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  margin-top:10px;
-}
 .text {
   font-family: Roboto;
   font-size: 14px;
@@ -116,17 +197,37 @@ html {
 body {
   overflow:visible!important;
 }
+.textholder {
+ width:90%;
+ left:0;
+ margin:auto;
+ margin-top: 30px;
+}
+.btns {
+  display:flex;
+  width:100%;
+  justify-content: center;
+  position:absolute;
+  bottom:10px;
+}
+.text > code {
+  background:rgba(0,0,0,0.16)
+}
 </style>
     </head>
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
       <script type="text/javascript" src="js/materialize.js"></script>
       <!-- this cssfile can be found in the jScrollPane package -->
       <script>
 $( ".header" ).next().css( "margin-top", "6px" );
 $( ".subheader" ).next().css( "margin-top", "6px" );
-$(".button-collapse").sideNav();
+$(".button-collapse").sideNav();  
+$("#bp2t").click(function(){
+  $('body:not(:animated)').animate({scrollTop: $("#p2t").offset().top - 200}, 1300, 'easeInOutQuad' );}
+);
 </script>
     </body>
   </html>
