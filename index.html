@@ -1,7 +1,132 @@
-<!DOCTYPE html>
+<ul id="slide-out" class="side-nav subbg">
+  <li><a class="subheader">Pages</a></li>
+  <li><a class="waves-effect subc" id="c1b" href="#!"></a>h</li>
+</ul>
+<div class="banner mg-bgcolor">
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons sidebar-open">menu</i></a>
+  <img class="logo vert-center image" src="https://lh3.googleusercontent.com/-RcMpwuGpMY4/Wn0WVhDsPPI/AAAAAAAABGU/AjYxYjOe5UMu0pc7F9MYqsBqPGfbWbLlgCEwYBhgL/w140-h139-p/Untitled.png">
+    <div>MGRich</div>
+  </img>
+</div>
+<div class="wrapper subbg" id="wp1">
+  <div class="header text subc"> &nbsp;&nbsp;WIP</div>
+  <div class="text subc">its wip deal with</div>
+</div>
 <html>
-<body>
-<h1>yo sup</h1>
-<p>this is a testttt</p>
-</body>
-</html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style type="text/css">
+#slide-out .subc, #slide-out .subheader, .sidebar-open {
+  color: var(--sub-c)!important;
+}
+.logo {
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 1px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 50%;
+}
+html {
+  --mg-bg:rgb(255, 196, 0);
+  --sub-bg:#FFF;
+  --sub-c:#000;
+}
+.mg-bgcolor {
+  background: var(--mg-bg);
+}
+.subbg {
+  background: var(--sub-bg);
+}
+.subc {
+  color: var(--sub-c);
+}
+.mg-bgcolor, .subbg {
+  transition:background .2s ease; 
+}
+.banner .logo {
+  position:absolute;
+  height: 110px;
+  top: 5% !important;
+  width: 110px;
+  left:0;
+  right:0;
+}
+.banner .btn-floating {
+  position: absolute;
+  top:25%;
+  border:none;
+  border-radius:50%;
+}
+.banner .btn-floating svg {
+  position: absolute;
+  top:16px;
+  left:16px;
+}
+.center {
+  text-align: center;
+}
+.vert-center {
+  left: 50%;
+  right: 50%;
+  margin: auto;
+}
+.image {
+  background: transparent;
+}
+.header, .subheader {
+  font-weight:bold;
+  font-size:20px!important;
+  border-bottom:2px solid var(--mg-bg);
+}
+.subheader {
+  font-size:17px!important
+}
+.banner {
+  position: sticky;
+  width: 100%;
+  height: 180px;
+  top:0!important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  z-index:3;
+}
+.page {
+  position:absolute;
+  width: 100%;
+  height: 100%!important;
+  top:130px!important;
+  padding-top:10px;
+}
+.wrapper {
+  width:70%;
+  height:auto!important;
+  min-height:250px;
+  margin:auto;
+  padding:5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-top:10px;
+}
+.text {
+  font-family: Roboto;
+  font-size: 14px;
+  display:block;
+}
+body {
+  overflow:visible!important;
+}
+</style>
+    </head>
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <!-- this cssfile can be found in the jScrollPane package -->
+      <script>
+$( ".header" ).next().css( "margin-top", "6px" );
+$( ".subheader" ).next().css( "margin-top", "6px" );
+$(".button-collapse").sideNav();
+</script>
+    </body>
+  </html>
