@@ -267,13 +267,25 @@
   @media only screen and (max-height: 400px) {
     .banner {
       height: 50px;
+	  flex-direction: row;
     }
     .banner .logo {
       width: 45px;
       height: 45px;
+      top:0;
+      left:calc(50% - 20px);
     }
     .smed {
       bottom: 10px !important; 
     } 
+    .nam {
+      visibility: hidden;
+    }
+    .sideb {
+      visibility: hidden;
+    }
+    .smed {
+      visibility: visible;
+    }
  } 
   
