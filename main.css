@@ -264,3 +264,16 @@
       margin:5px !important; 
     }
   }
+  @media only screen and (max-height: 400px) {
+    .banner {
+      height: 50px;
+    }
+    .banner .logo {
+      width: 45px;
+      height: 45px;
+    }
+    .smed {
+      bottom: 10px !important; 
+    } 
+ } 
+  
