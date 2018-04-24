@@ -2,12 +2,7 @@ And we're off!
 ----------------
 Welcome to the first ever version of PTR2Modder.
 As for now, only the basic mode is implemented, but I will be working on the creating mode soon.
-For now, mods can be converted by put in their ISO data with their mod folders and writing a mod.inf filel ike so:
-
-Name of mod
-Author
-Version
-Region
+For now, mods can be converted by using the option in PTR2Modder and putting in their ISO data with their mod folders.
 
 I hope this will be a helpful new strategy for modders everywhere.
 - RMGRich
