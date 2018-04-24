@@ -1,6 +1,6 @@
 And we're off!
 ----------------
-Welcome to the first ever versionn of PTR2Modder.
+Welcome to the first ever version of PTR2Modder.
 As for now, only the basic mode is implemented, but I will be working on the creating mode soon.
 For now, mods can be converted by put in their ISO data with their mod folders and writing a mod.inf filel ike so:
 
