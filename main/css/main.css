@@ -23,9 +23,9 @@ div {
 }
 
 body div {
-    width: calc(100% - 20px);
-    left: 10px;
-    top:10px;
+    width: calc(100% - 40px);
+    left: 20px;
+    top:15px;
     position: relative;
 }
 
@@ -36,4 +36,18 @@ body div {
     bottom:10px;
     left: 70px;
     color:black !important;
+}
+
+#pdropdown li a {
+    color:black;
+}
+
+#pdropdown li {
+    position: relative;
+    top:0px;    
+}
+
+#nav-mobile li {
+    position: relative;
+    bottom:10px;
 }

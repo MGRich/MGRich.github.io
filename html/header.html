@@ -1,0 +1,24 @@
+<nav class="banner yellow accent-4 z-depth-2">
+        <div class="nav-wrapper">
+            <img class="logo" src="../cdn/logo.png"/>
+            <a class="brand-logo ltext">RMGRich</a>
+            <ul id="nav-mobile" class="right">
+                <li><a class="btn-flat dropdown-trigger" id="pdd-btn" href="#" data-target="pdropdown">Projects</a></li>
+            </ul>
+        </div>
+        <ul id="pdropdown" class="dropdown-content">
+            <li><a href="Animanager.html">test</a></li>
+        </ul>
+        </nav>
+        
+<script>
+$(document).ready(function() {
+    $('.dropdown-trigger').dropdown();
+      
+      $("#pdd-btn").click(function(e) {
+          console.log("e");
+          var instance = M.Dropdown.getInstance($("#pdd-btn"));
+          instance.open();
+      });
+    });
+</script>
