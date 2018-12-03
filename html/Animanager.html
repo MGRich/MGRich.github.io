@@ -1,16 +1,50 @@
-<head id="head">
-    <script type="text/javascript" src="../main/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../main/css/main.css"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <script>
-    $(document).ready(function() {
-        $('#header').load('header.html');
-    });
-    </script>
-</head>
+<head>
+        <script
+                  src="https://code.jquery.com/jquery-3.3.1.js"
+                  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+            $.getJSON("https://api.github.com/repos/MGRich/animanager2/releases").done(function(x) {
+                $.getJSON(x[0].assets_url).done(function(y) {
+                    $.getJSON(y[0]).done(function(z){
+                        $(".download").attr("href", z.browser_download_url);
+                        $(".github").attr("href", "https://github.com/MGRich/animanager2/"); //both in one place for easy 
+                    });
+                });
+            });
+            M.AutoInit();
+        });
+
+        </script>
+        <header id="header"></header>
+    </head>
+    
 <body>
-    <header id="header"></header>
-</body>
+        <div class="dcard z-depth-1-half">
+            <div>        
+                <div class="header">Animanager</div>
+                    <a class="btn-floating btn-large waves-effect waves-light black download"><i class="material-icons">file_download</i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light grey darken-2 github"><img width="32" height="32" src="../img/gitico.png"></a>
+    
+                    <div class="subheader">Description</div>  
+                    <div style="white-space: pre-wrap">Animanager is a project that I created for my friends. It allows you to keep track of an anime you're watching or a manga you're reading with ease.</div>
+                    
+                    <div class="subheader">Abilities</div>  
+                    <ul>
+                        <li>- Has custom file system</li>
+                        <li>- Mark episode as watched or unwatched</li>
+                        <li>- Image choices for anime and seasons</li>
+                        <li>- Compact always-on-top viewer</li>
+                    </ul>
+
+                    <div class="img"><img class="materialboxed" width="600" src="../img/anm/1.png"></div> 
+                        
+                </div>
+        </div>
+        <footer id="footer"></footer>
+    </body
     
