@@ -1,0 +1,51 @@
+<head>
+        <script
+                  src="https://code.jquery.com/jquery-3.3.1.js"
+                  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+            $.getJSON("https://api.github.com/repos/MGRich/birthdaymanager/releases").done(function(x) {
+                $.getJSON(x[0].assets_url).done(function(y) {
+                    $.getJSON(y[0]).done(function(z){
+                        $(".download").attr("href", z.browser_download_url);
+                        $(".github").attr("href", "https://github.com/MGRich/birthdaymanager/"); //both in one place for easy 
+                    });
+                });
+            });
+            M.AutoInit();
+        });
+
+        </script>
+        <title>BirthdayManager - RMGRich</title>
+        <header id="header"></header>
+    </head>
+    
+<body>
+        <div class="dcard z-depth-1-half">
+            <div>        
+                <div class="header">BirthdayManager</div>
+                    <a class="btn-floating btn-large waves-effect waves-light black download"><i class="material-icons">file_download</i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light grey darken-2 github"><img width="32" height="32" src="../img/gitico.png"></a>
+    
+                    <div class="subheader">Description</div>  
+                    <div style="white-space: pre-wrap">BirthdayManager's name speaks for itself. It manages birthday dates for you sos you don't have to constantly try to remember.</div>
+                    
+                    <div class="subheader">Abilities</div>  
+                    <ul>
+                        <li>- Has custom file system</li>
+                        <li>- Can be hid to tray</li>
+                        <li>- Can start on startup</li>
+                        <li>- Has balloon notification system to alert birthday date</li>
+                    </ul>
+
+                    <div class="img"><img class="materialboxed" width="600" src="../img/bdm/1.png"></div> 
+                        
+                </div>
+        </div>
+        <footer id="footer"></footer>
+    </body
+    
