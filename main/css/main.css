@@ -7,6 +7,7 @@
     height: 60px;
     position: relative;
     bottom: 9px;
+    left:15px;
 }
 .banner {
     /*width: 100%;
@@ -33,6 +34,10 @@ body > div.dcard {
     margin-top: 10px;
 }
 
+body > div.dcard:last-of-type {
+    margin-bottom: 30px;
+}   
+
 body > div.dcard > div {
     padding: 5px 15px 15px 15px;
 }
@@ -40,6 +45,8 @@ body > div.dcard > div {
 body > div.dcard > div > .img {
     position: relative;
     margin: auto;
+    margin-bottom: 10px;
+    margin-top:10px;
     padding: 10px;
     width: 620px;
 }
@@ -48,12 +55,15 @@ body > div.dcard > div > .img > .material-placeholder {
     width:auto;
 }
 
+body > div.dcard > div p { 
+    white-space: pre-wrap
+}
 .ltext {
     /*padding-left:20px;*/
     font-size: 23px;
     position: relative;
     bottom:0px;
-    left: 70px;
+    left: 85px;
     color:black !important;
 }
 
@@ -83,12 +93,26 @@ body > div.dcard > div > .img > .material-placeholder {
 .header, .subheader {
     font-weight: 500;
     font-size: 40px;
+    border-bottom: #FFE500 5px solid;
+    margin-bottom: 15px;
 }
 .subheader {
     font-size:32px;
+    border-width: 3px;
+    margin-bottom:10px;
 }
 a.subheader {
     color:black;    
+}
+.catheader {
+    font-weight: 500;
+    font-size: 28px;
+    border-bottom: #FFE500 1px solid;
+    margin-bottom: 4px;
+}
+.abriheader {
+    font-weight: 500;
+    font-size: 24px;
 }
 
 .footer {
@@ -100,5 +124,20 @@ a.subheader {
 }
 
 .github img {
-    top:12px;
+    top:8px;
+    width:26px;
+    height: 26px;
+}
+.download i {
+    line-height: 42px !important;
+}
+.download,.github {
+    position: absolute;
+    left:190px;
+    top:83px;
+    width: 42px !important;
+    height: 42px !important;
+}
+.github {
+    left: 235px;
 }
