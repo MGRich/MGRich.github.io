@@ -5,21 +5,45 @@
           crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <script>
-   $(document).ready(function() {
-       $('#header').load('header.html');
-       $('#footer').load('footer.html');
-       M.AutoInit();
-   });
+        var repo = "ptr2tools"
+        
+        $(document).ready(function() {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+            $.getJSON("https://api.github.com/repos/MGRich/"+ repo + "/releases").done(function(x) {
+                $.getJSON(x[0].assets_url).done(function(y) {
+                    $.getJSON(y[0]).done(function(z){
+                        $("#down").attr("href", z.browser_download_url);
+                    });
+                });
+            });
+            M.AutoInit();
+        });
+
    </script>
    <title>RMGRich</title>
    <header id="header"></header>
+                
+</head>
 
-   <meta name="description" content="The official website for RMGRich's Github projects."/>
-   <meta property="og:title" content="RMGRich"/>
-   <meta property="og:description" content="The official website for RMGRich's Github projects.">
-   <meta name="theme-color" content="#FFD600" />
-   </head>
+<head prefix="og: http://ogp.me/ns#">
+    
+    <meta id="mtitle" property="og:title" content="PTR2Tools - RMGRich">
+    <meta property="og:site_name" content="RMGRich's Github Website">
+    <meta property="og:url" content="https://mgrich.github.io">
+    <meta id="mdesc" property="og:description" content="The PTR2Tools documentation and install tutorial.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mgrich.github.io/img/logo.png">
+    <meta name="theme-color" content="#FFD600"/>
+  
+    <!--x<script>
+    var name = "BirthdayManager"
+    var description = "A project that keeps birthdays in check. It says when it's someones birthday and can even be hidden and started at startup!"
 
+    $("#mtitle").attr("content", name + " - RMGRich")
+    $("#mdesc").attr("content", name)
+    </script>-->
+</head>
 <body>
    <div class="dcard z-depth-1-half">
        <div>        
@@ -34,16 +58,16 @@
              <div class="header">TUTORIAL</div>
   
                  <div class="subheader">TO FREE MINGW</div>
-                  <div>Run "cd /".</div>
-                  <div>From here you can CD to the C (or any) drive by doing "cd c".</div>
+                  <div>Run <code>cd /</code>.</div>
+                  <div>From here you can CD to the C (or any) drive by doing <code>cd c</code>.</div>
                   <div>Note that you will have to do this everytime you start up MINGW. </div>
   
                   <div class="subheader">COMPILING AND SETUP</div>
                   <ol>
-                     <li>Install MSYS2 from https://www.msys2.org/ and open the MINGW64 console.</li>
+                     <li>Install <a href="https://www.msys2.org/">MSYS2</a> from and open the MINGW64 console.</li>
                      <li>Use the cd command to direct where you want the installation to go.</li>
-                     <li>Download the make.sh in the releases page and place it into the directory (do "cd ." if you were in the dir you put it in)</li>
-                     <li>Use the command "sh make.sh"</li>
+                     <li>Download the latest <a href="" id="down">make.sh</a> and place it into the directory (do <code>cd .</code> if you were in the dir you put it in)</li>
+                     <li>Use the command <code>sh make.sh</code></li>
                      <li>Say yes to all packages it prompts.</li>
                   </ol>
                   <p>Once this finishes, you should have PTR2Tools installed in MINGW64. If you wish to check for updates, run the make.sh again.</p>
@@ -95,9 +119,88 @@
                      <div class="abriheader">Arguments</div>
                      <div>folder: The folder created from the extract command that wishes to be optimized.</div>
                      <div>out-neworderfile: The new order file to be created.</div>
+            
+               <div class="subheader">PTR2SPM</div>
 
+                  <div class="catheader">gtex0 [spmfile] [outfile]</div>
+   
+                     <div class="abriheader">Description</div>
+                     <div>Extracts tex0 from an SPM model in the form of a list for PTR2TEX to use.</div>
 
-             </div>
+                     <div class="abriheader">Arguments</div>
+                     <div>spmfile: The spm file.</div>
+                     <div>outfile: The output file in .txt.</div>
+
+               <div class="subheader">PTR2TEX</div>
+
+                  <div class="catheader">extract [tm0-folder] [in-listfile] {png-folder}</div>
+   
+                     <div class="abriheader">Description</div>
+                     <div>Extracts certain tex0 from tm0 using the tex0 list.</div>
+                     <div style="font-weight: 500">Aliases: e, x, get, g</div>
+
+                     <div class="abriheader">Arguments</div>
+                     <div>tm0-folder: The folder where all tm0 are stored.</div>
+                     <div>in-listfile: The .txt file containing the tex0. Created by PTR2SPM gtex0 command.</div>
+                     <div>png-folder: The folder to extract the images to.</div>
+
+                  <div class="catheader">inject [tm0-folder] [in-listfile] {png-folder}</div>
+   
+                     <div class="abriheader">Description</div>
+                     <div>Injects/puts certain tex0 into the tm0 using the tex0 list.</div>
+                     <div style="font-weight: 500">Aliases: i, put, p</div>
+
+                     <div class="abriheader">Arguments</div>
+                     <div>tm0-folder: The folder where all tm0 are stored.</div>
+                     <div>in-listfile: The .txt file containing the tex0. Created by PTR2SPM gtex0 command.</div>
+                     <div>png-folder: The folder to grab the images to be injected.</div>
+   
+               <div class="subheader">PTR2TEX2 (OLD PTR2TEX)</div>
+
+                  <div>This was included in here just incase the common "Segmentation Fault" error appears while using PTR2TEX. I have no idea if it even works anymore, but wouldn't hurt to give it a try.</div>
+                     <div class="catheader">extract-list [tm0-folder] [in-listfile] {png-folder}</div>
+      
+                        <div class="abriheader">Description</div>
+                        <div>Extracts certain tex0 from tm0 using the tex0 list.</div>
+   
+                        <div class="abriheader">Arguments</div>
+                        <div>tm0-folder: The folder where all tm0 are stored.</div>
+                        <div>in-listfile: The .txt file containing the tex0. Created by PTR2SPM gtex0 command.</div>
+                        <div>png-folder: The folder to extract the images to.</div>
+   
+                     <div class="catheader">inject-list [tm0-folder] [in-listfile] {png-folder}</div>
+      
+                        <div class="abriheader">Description</div>
+                        <div>Injects/puts certain tex0 into the tm0 using the tex0 list.</div>
+   
+                        <div class="abriheader">Arguments</div>
+                        <div>tm0-folder: The folder where all tm0 are stored.</div>
+                        <div>in-listfile: The .txt file containing the tex0. Created by PTR2SPM gtex0 command.</div>
+                        <div>png-folder: The folder to grab the images to be injected.</div>
+
+                     <div class="catheader">extract [tm0-folder] [tex0] [output-filename]</div>
+      
+                        <div class="abriheader">Description</div>
+                        <div>Extracts a certain tex0 from tm0.</div>
+   
+                        <div class="abriheader">Arguments</div>
+                        <div>tm0-folder: The folder where all tm0 are stored.</div>
+                        <div>tex0: The tex0 to extract.</div>
+                        <div>output-filename: The extracted image.</div>
+   
+                     <div class="catheader">inject [tm0-folder] [tex0] [input-filename]</div>
+      
+                        <div class="abriheader">Description</div>
+                        <div>Injects a certain tex0 from tm0.</div>
+
+                        <div class="abriheader">Arguments</div>
+                        <div>tm0-folder: The folder where all tm0 are stored.</div>
+                        <div>tex0: The tex0 to be modified.</div>
+                        <div>input-filename: The image to inject.</div>
+
+      
+   
+         </div>
      </div>
   
    <footer id="footer"></footer>
