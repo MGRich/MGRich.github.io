@@ -9,23 +9,6 @@
         $('#header').load('header.html');
         $('#footer').load('footer.html');
         M.AutoInit();
-        console.log($(window).width());
-
-        function resize() {
-            if ($(window).width() < 801) {
-                $(".img").attr("width", "300");
-                $(".materialboxed").attr("width", "300");
-            } else {
-                $(".img").attr("width", "600");
-                $(".materialboxed").attr("width", "600");
-            }
-        };
-
-        resize();
-            
-        $(window).bind('resize', function(){
-            resize();
-        });
     });
     </script>
    <header id="header"></header>
@@ -46,24 +29,22 @@
 </head>
 
 <body>
-    <main id="swup" class="transition-fade">   
-        <div class="dcard z-depth-1-half">
-            <div>        
-                <div class="header">Projects</div>
-    
-                    <a class="subheader" href="BirthdayManager.html">BirthdayManager</a>  
-                    <div>A project that keeps birthdays in check. It says when it's someones birthday and can even be hidden and started at startup!</div> 
-                    <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/bdm/1.png"></div> 
-    
-                    <a class="subheader" href="Animanager.html">Animanager</a>  
-                    <div>A simple project that I did for my friends. Still somewhat in development, yet dormant due to website development.</div> 
-                    <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/anm/1.png"></div> 
-    
-                    <div class="subheader">RandomChooser</div>  
-                    <div>TBD</div> 
-    
-                </div>
-        </div>
-    </main>
+    <div class="dcard z-depth-1-half">
+        <div>        
+            <div class="header">Projects</div>
+
+                <a class="subheader" href="BirthdayManager.html">BirthdayManager</a>  
+                <div>A project that keeps birthdays in check. It says when it's someones birthday and can even be hidden and started at startup!</div> 
+                <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/bdm/1.png"></div> 
+
+                <a class="subheader" href="Animanager.html">Animanager</a>  
+                <div>A simple project that I did for my friends. Still somewhat in development, yet dormant due to website development.</div> 
+                <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/anm/1.png"></div> 
+
+                <div class="subheader">RandomChooser</div>  
+                <div>TBD</div> 
+
+            </div>
+    </div>
     <footer id="footer"></footer>
 </body>
