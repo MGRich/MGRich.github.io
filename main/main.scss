@@ -1,14 +1,11 @@
-.gold {
-    background: #FFE500;
-    color: black;
+@import "materialize/materialize.scss";
+
+%gold {
+    @extend .yellow;
+    @extend .accent-4;
 }
-.banner .logo {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    bottom: 9px;
-    left:15px;
-}
+$gold: #FFE500;
+
 .banner {
     /*width: 100%;
     /*height: 80px;*/
@@ -17,6 +14,13 @@
     z-index: 3;
     display: flex;
     align-items: center !important;
+    .logo {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        bottom: 9px;
+        left:15px;
+    }
 }
 div {
     font-family: Roboto, 'Segoe UI', Arial, Helvetica, sans-serif;
@@ -30,34 +34,34 @@ body > div {
     position: relative;
 }
 
-body > div.dcard {
+div.dcard {
     margin-top: 10px;
+    @extend .z-depth-1-half;
+    > div {
+        padding: 5px 15px 15px 15px;
+        .img {
+            @extend .z-depth-2;
+            position: relative;
+            margin: auto;
+            //margin-bottom: 10px;
+            margin-top:10px;
+            padding: 10px;
+            width: 620px;
+            height: auto;
+            > .material-placeholder {
+                width:auto;
+            }            
+        }
+        p {
+            white-space: pre-wrap
+        }
+    }
 }
 
-body > div.dcard:last-of-type {
+div.dcard:last-of-type {
     margin-bottom: 30px;
-}   
-
-body > div.dcard > div {
-    padding: 5px 15px 15px 15px;
 }
 
-body > div.dcard > div > .img {
-    position: relative;
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top:10px;
-    padding: 10px;
-    width: 620px;
-}
-
-body > div.dcard > div > .img > .material-placeholder {
-    width:auto;
-}
-
-body > div.dcard > div p { 
-    white-space: pre-wrap
-}
 .ltext {
     /*padding-left:20px;*/
     font-size: 23px;
@@ -67,16 +71,14 @@ body > div.dcard > div p {
     color:black !important;
 }
 
-#pdropdown li a {
-    color:black;
-}
-
-#pdropdown li {
-    position: relative;
-    top:0px;    
-}
-
 #pdropdown {
+    li {
+        position: relative;
+        top:0px;  
+        a {
+            color:black;
+        }  
+    }
     width: auto !important;
 }
 
@@ -90,13 +92,14 @@ body > div.dcard > div p {
     padding-top:10px;
 }
 
-.header, .subheader {
+.header {
     font-weight: 500;
     font-size: 40px;
-    border-bottom: #FFE500 5px solid;
+    border-bottom: $gold 5px solid;
     margin-bottom: 15px;
 }
 .subheader {
+    @extend .header;
     font-size:32px;
     border-width: 3px;
     margin-bottom:10px;
@@ -107,7 +110,7 @@ a.subheader {
 .catheader {
     font-weight: 500;
     font-size: 28px;
-    border-bottom: #FFE500 1px solid;
+    border-bottom: $gold 1px solid;
     margin-bottom: 4px;
 }
 .abriheader {
@@ -123,21 +126,27 @@ a.subheader {
     text-align: center;
 }
 
-.github img {
-    top:8px;
-    width:26px;
-    height: 26px;
-}
-.download i {
-    line-height: 42px !important;
-}
-.download,.github {
+.download {
     position: absolute;
     left:190px;
     top:83px;
     width: 42px !important;
     height: 42px !important;
+    i {
+        line-height: 42px !important;
+    }
 }
 .github {
+    @extend .download;
     left: 235px;
+    img {
+        top:8px;
+        width:26px;
+        height: 26px;
+    }
+}
+
+.banner, .footer {
+    @extend %gold;
+    @extend .z-depth-2;
 }
