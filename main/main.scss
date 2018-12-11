@@ -12,8 +12,6 @@ $gold: #FFE500;
 //END OVERRIDES  
 
 .banner {
-    /*width: 100%;
-    /*height: 80px;*/
     position: sticky;
     top:0 !important;
     z-index: 3;
@@ -48,7 +46,6 @@ div.dcard {
             @extend .z-depth-2;
             position: relative;
             margin: auto;
-            //margin-bottom: 10px;
             margin-top:10px;
             padding: 10px;
             width: 620px;
@@ -66,7 +63,6 @@ div.dcard {
 }
 
 .ltext {
-    /*padding-left:20px;*/
     font-size: 23px;
     position: relative;
     bottom:0px;
@@ -111,13 +107,13 @@ a.subheader {
     color:black;    
 }
 .catheader {
-    font-weight: 500;
+    @extend .header;
     font-size: 28px;
     border-bottom: $gold 1px solid;
     margin-bottom: 4px;
 }
 .abriheader {
-    font-weight: 500;
+    @extend .catheader;
     font-size: 24px;
 }
 
