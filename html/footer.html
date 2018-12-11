@@ -2,4 +2,47 @@
     Website made handmade by RMGRich.
 
     Materialize made by Materialize Dev Team at https://materializecss.com/.
+    <div class="switch"><label><input type="checkbox"><span class="lever"></span></label>Dark/Light Toggle
+</div>
+    <script>
+
+    function dark() {
+        $("*").css({
+                'color': 'white'
+            })
+            $("body").css({
+                'background': 'black'
+            })
+            $(".nav-wrapper a").css({
+                'color': 'black'
+            })
+            $(".footer, .switch").css({
+                'color': 'black'
+            })
+            $(".download").toggleClass("grey darken-2 black")
+    }
+
+    function light() {
+        $("*").removeAttr("style")
+            $(".download").toggleClass("grey darken-2 black")
+    }
+    $(document).ready(function() {
+        console.log(localStorage.getItem("dark"));
+        if (localStorage.getItem("dark") === "t") {
+            $(".switch label checkbox").prop("checked", true)
+            dark();
+        }
+    })
+    $(".lever").click(function() {
+        if (localStorage.getItem("dark") === "t") {
+            localStorage.removeItem("dark");
+            light();
+        }
+        else {
+            localStorage.setItem("dark", "t");
+            dark();
+        }
+    })
+    </script>
+
 </div>

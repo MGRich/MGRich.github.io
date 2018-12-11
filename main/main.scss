@@ -1,10 +1,15 @@
+
 @import "materialize/materialize.scss";
+
+$gold: #FFE500;
 
 %gold {
     @extend .yellow;
     @extend .accent-4;
 }
-$gold: #FFE500;
+//MATERIALIZE OVERRIDES
+
+//END OVERRIDES  
 
 .banner {
     /*width: 100%;
@@ -56,10 +61,9 @@ div.dcard {
             white-space: pre-wrap
         }
     }
-}
-
-div.dcard:last-of-type {
-    margin-bottom: 30px;
+    &:last-of-type {
+        margin-bottom: 30px;
+    }    
 }
 
 .ltext {
@@ -124,6 +128,22 @@ a.subheader {
     height: 110px;
     width: 100%;
     text-align: center;
+    white-space: pre-wrap;
+    .switch {
+        position: absolute;
+        bottom:3px;
+        line-height: 30px;
+        font-size: 12px;
+        label {
+            color:black;
+            position: relative;
+            top:-1px;
+            cursor: default;
+            .lever {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .download {
