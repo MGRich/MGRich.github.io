@@ -2,8 +2,7 @@
     Website made handmade by RMGRich.
 
     Materialize made by Materialize Dev Team at https://materializecss.com/.
-    <div class="switch"><label><input type="checkbox"><span class="lever"></span></label>Dark/Light Toggle
-</div>
+    <a class="btn-flat dropdown-trigger" id="dark" href="#">Dark/Light Toggle</a>
     <script>
 
     function dark() {
@@ -33,7 +32,7 @@
             dark();
         }
     })
-    $(".lever").click(function() {
+    $("#dark").click(function() {
         if (localStorage.getItem("dark") === "t") {
             localStorage.removeItem("dark");
             light();

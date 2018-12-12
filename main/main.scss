@@ -124,20 +124,10 @@ a.subheader {
     width: 100%;
     text-align: center;
     white-space: pre-wrap;
-    .switch {
+    #dark {
         position: absolute;
-        bottom:3px;
-        line-height: 30px;
-        font-size: 12px;
-        label {
-            color:black;
-            position: relative;
-            top:-1px;
-            cursor: default;
-            .lever {
-                cursor: pointer;
-            }
-        }
+        bottom: 5px;
+        left:5px;
     }
 }
 
