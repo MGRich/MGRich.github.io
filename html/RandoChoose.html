@@ -14,7 +14,7 @@
                 $.getJSON(x[0].assets_url).done(function(y) {
                     $.getJSON(y[0]).done(function(z){
                         $(".download").attr("href", z.browser_download_url);
-                        $(".github").attr("href", "https://github.com/MGRich/" + repo); //both in one place for easy 
+                        $(".github.ownpage").attr("href", "https://github.com/MGRich/" + repo); //both in one place for easy 
                     });
                 });
             });
@@ -52,7 +52,7 @@
             <div>        
                 <div class="header">RandoChoose</div>
                     <a class="btn-floating btn-large waves-effect waves-light black download"><i class="material-icons">file_download</i></a>
-                    <a class="btn-floating btn-large waves-effect waves-light grey darken-2 github"><img width="32" height="32" src="../img/gitico.png"></a>
+                    <a class="btn-floating btn-large waves-effect waves-light grey darken-2 github ownpage"><img width="32" height="32" src="../img/gitico.png"></a>
     
                     <div class="subheader">Description</div>  
                     <div style="white-space: pre-wrap">RandoChoose is a project that I did for a teacher of mine. Now you can easily create regular entries without having some systsem for matching RNG numbers with strings or names.</div>

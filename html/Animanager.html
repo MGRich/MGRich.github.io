@@ -1,33 +1,32 @@
 <head prefix="og: http://ogp.me/ns#">
-        <script
-                  src="https://code.jquery.com/jquery-3.3.1.js"
-                  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-                  crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script>
-        var repo = "animanager2"
-        
-        $(document).ready(function() {
-            $('#header').load('header.html');
-            $('#footer').load('footer.html');
-            $.getJSON("https://api.github.com/repos/MGRich/"+ repo + "/releases").done(function(x) {
-                $.getJSON(x[0].assets_url).done(function(y) {
-                    $.getJSON(y[0]).done(function(z){
-                        $(".download").attr("href", z.browser_download_url);
-                        $(".github").attr("href", "https://github.com/MGRich/" + repo); //both in one place for easy 
-                    });
+    <script
+                src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    var repo = "animanager2"
+    
+    $(document).ready(function() {
+        $('#header').load('header.html');
+        $('#footer').load('footer.html');
+        $.getJSON("https://api.github.com/repos/MGRich/"+ repo + "/releases").done(function(x) {
+            $.getJSON(x[0].assets_url).done(function(y) {
+                $.getJSON(y[0]).done(function(z){
+                    $(".download").attr("href", z.browser_download_url);
+                    $(".github.ownpage").attr("href", "https://github.com/MGRich/" + repo); //both in one place for easy 
                 });
             });
-            M.AutoInit();
         });
+        M.AutoInit();
+    });
 
-        </script>
-        <header id="header"></header>
+    </script>
+    <header id="header"></header>
 
-    </head>
+</head>
 
     <head prefix="og: http://ogp.me/ns#">
-    
         <title>Animanager - RMGRich</title>
         <meta id="mtitle" property="og:title" content="Animanager - RMGRich">
         <meta property="og:site_name" content="RMGRich's Github Website">
@@ -36,36 +35,30 @@
         <meta property="og:type" content="website">
         <meta property="og:image" content="https://mgrich.github.io/img/logo.png">
         <meta name="theme-color" content="#FFD600"/>
-      
-        <!--<script>
-        var name = "BirthdayManager"
-        var description = "A project that keeps birthdays in check. It says when it's someones birthday and can even be hidden and started at startup!"
-    
-        $("#mtitle").attr("content", name + " - RMGRich")
-        $("#mtitle").attr("content", name)
-        </script>-->
     </head>
     
     
 <body>
-        <div class="dcard">
-            <div>        
-                <div class="header">Animanager</div>
-    
-                    <div class="subheader">Description</div>  
-                    <div style="white-space: pre-wrap">Animanager is a project that I created for my friends. It allows you to keep track of an anime you're watching or a manga you're reading with ease.</div>
-                    
-                    <div class="subheader">Abilities</div>  
-                    <ul>
-                        <li>- Has custom file system</li>
-                        <li>- Mark episode as watched or unwatched</li>
-                        <li>- Image choices for anime and seasons</li>
-                        <li>- Compact always-on-top viewer</li>
-                    </ul>
+    <div class="dcard">
+        <div>        
+            <div class="header">Animanager</div>
+            <a class="btn-floating btn-large waves-effect waves-light black download"><i class="material-icons">file_download</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light grey darken-2 github ownpage"><img width="32" height="32" src="../img/gitico.png"></a>
 
-                    <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/anm/1.png"><img class="materialboxed" width="600" src="../img/anm/2.png"></div> 
-                        
-                </div>
+                <div class="subheader">Description</div>  
+                <div style="white-space: pre-wrap">Animanager is a project that I created for my friends. It allows you to keep track of an anime you're watching or a manga you're reading with ease.</div>
+                
+                <div class="subheader">Abilities</div>  
+                <ul>
+                    <li>- Has custom file system</li>
+                    <li>- Mark episode as watched or unwatched</li>
+                    <li>- Image choices for anime and seasons</li>
+                    <li>- Compact always-on-top viewer</li>
+                </ul>
+
+                <div class="img z-depth-2"><img class="materialboxed" width="600" src="../img/anm/1.png"><img class="materialboxed" width="600" src="../img/anm/2.png"></div> 
+                    
         </div>
-        <footer id="footer"></footer>
-    </body>
+    </div>
+    <footer id="footer"></footer>
+</body>

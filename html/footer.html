@@ -2,28 +2,38 @@
     Website made handmade by RMGRich.
 
     Materialize made by Materialize Dev Team at https://materializecss.com/.
-    <a class="btn-flat dropdown-trigger" id="dark" href="#">Dark/Light Toggle</a>
+    <div class="button-container">
+        <a class="btn-floating btn-large waves-effect waves-light" id="dark"><i class="material-icons">brightness_7</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="mailto:rmgrichdeveloper@gmail.com"><i class="material-icons">email</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light github" href="https://github.com/MGRich"><img width="32" height="32" src="../img/gitico.png"></a>
+    </div>
+
+
     <script>
 
     function dark() {
         $("*").css({
-                'color': 'white'
-            })
-            $("body").css({
-                'background': 'black'
-            })
-            $(".nav-wrapper a").css({
-                'color': 'black'
-            })
-            $(".footer, .switch").css({
-                'color': 'black'
-            })
-            $(".download").toggleClass("grey darken-2 black")
+            'color': 'white'
+        })
+        $("body").css({
+            'background': 'black'
+        })
+        $(".nav-wrapper a").css({
+            'color': 'black'
+        })
+        $(".footer, .footer a").css({
+            'color': 'black'
+        })
+        $(".download").toggleClass("grey darken-2 black")
+        $("a").removeAttr("style")
+        $("a.subheader").css({
+            'color': 'white'
+        })
     }
 
     function light() {
         $("*").removeAttr("style")
-            $(".download").toggleClass("grey darken-2 black")
+        $(".download").toggleClass("grey darken-2 black")
     }
     $(document).ready(function() {
         console.log(localStorage.getItem("dark"));
