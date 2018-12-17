@@ -24,8 +24,8 @@ $gold: #FFE500;
         position: relative;
         bottom: 9px;
         left:15px;
-        display: block;
-        margin: auto;
+        //display: block;
+        margin-left: calc(50% - 40px);
     }
     #nav-mobile {
         position: absolute;
@@ -152,6 +152,8 @@ a.subheader {
     .logo {
         position: absolute;
         bottom: 2px;
+        display: block;
+        margin-left: calc(50% - 25px);
     }
 }
 
