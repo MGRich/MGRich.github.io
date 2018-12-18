@@ -71,7 +71,7 @@ div.dcard {
         }
     }
     &:last-of-type {
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }    
 }
 
@@ -132,15 +132,15 @@ a.subheader {
 }
 
 .footer {
-    position: relative;
+    position: fixed;
     bottom: 0px;
-    height: 64px;
+    height: 70px;
     width: 100%;
     text-align: center;
     white-space: pre-wrap;
     .button-container {
         position: absolute;
-        bottom: 4px;
+        bottom: 7px;
         left:10px;
         height: 56px;
         display: flex;
@@ -151,9 +151,9 @@ a.subheader {
     }
     .logo {
         position: absolute;
-        bottom: 2px;
+        bottom: 6px;
         display: block;
-        margin-left: calc(50% - 25px);
+        margin-left: calc(50% - 23px);
     }
 }
 
