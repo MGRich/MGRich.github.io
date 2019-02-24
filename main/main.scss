@@ -1,17 +1,22 @@
 @import "materialize/materialize.scss";
 
-$gold: #FFE500;
+$gold: #F1C40F;
 
 %gold {
     @extend .yellow;
     @extend .accent-4;
 }
 //MATERIALIZE OVERRIDES
-
+#materialbox-overlay {
+    @extend .black;
+}
 //END OVERRIDES  
 
 * {
     transition: color .1s, background .1s;
+}
+body {
+    background: black;
 }
 
 .banner {
@@ -31,12 +36,16 @@ $gold: #FFE500;
         position: absolute;
         top:10px;
         right: 10px;
+        #pdd-btn {
+            color: $gold;
+        }
     }
 }
 .logo {
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.07)) drop-shadow(0 3px 1px rgba(0,0,0,0.06)) drop-shadow(0 1px 5px rgba(0,0,0,0.1));
+    //filter: drop-shadow(0 2px 2px rgba(0,0,0,0.07)) drop-shadow(0 3px 1px rgba(0,0,0,0.06)) drop-shadow(0 1px 5px rgba(0,0,0,0.1));
     width: 60px;
     height: 60px;
+    fill: $gold;
 }
 div {
     font-family: Roboto, 'Segoe UI', Arial, Helvetica, sans-serif;
@@ -51,6 +60,7 @@ div {
 
 
 div.dcard {
+    color: white;
     margin-top: 10px;
     @extend .z-depth-1-half;
     > div {
@@ -83,14 +93,19 @@ div.dcard {
     color:black !important;
 }*/
 
+
 #pdropdown {
     li {
         position: relative;
         top:0px;  
         a {
-            color:black;
+            color:white;
         }  
+        &:hover {
+            background: rgba(255, 255, 255, 0.2)
+        }
     }
+    @extend .black;
     width: auto !important;
 }
 
@@ -109,6 +124,7 @@ div.dcard {
     font-size: 40px;
     border-bottom: $gold 5px solid;
     margin-bottom: 15px;
+    color: $gold;
 }
 .subheader {
     @extend .header;
@@ -117,7 +133,7 @@ div.dcard {
     margin-bottom:10px;
 }
 a.subheader {
-    color:black;    
+    color:$gold;    
 }
 
 .catheader {
@@ -182,7 +198,11 @@ a.subheader {
     }
 }
 
+
 .banner, .footer {
-    @extend %gold;
-    @extend .z-depth-2;
+    @extend .z-depth-2, .black;
+    //background: black;
+    #dark {
+        display: none;
+    }    
 }

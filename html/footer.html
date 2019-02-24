@@ -36,9 +36,9 @@
     }
     $(document).ready(function() {
         console.log(localStorage.getItem("dark"));
-        if (localStorage.getItem("dark") === "t") {
-            $(".switch label checkbox").prop("checked", true)
-            dark();
+        if (true /*localStorage.getItem("dark") === "t"*/) {
+            //$(".switch label checkbox").prop("checked", true)
+            //dark();
         }
     })
     $("#dark").click(function() {
